@@ -126,7 +126,7 @@ body {
     left: -20vh;
     width: 60vmin;
     height: 60vmin;
-    background: radial-gradient(circle, rgba(93, 226, 108, 0.45) 0%, rgba(0, 0, 0, 0) 70%);
+    background: radial-gradient(circle, rgba(93, 226, 108, 0.6) 0%, rgba(0, 0, 0, 0) 70%);
     filter: blur(60px);
     z-index: 0;
     pointer-events: none;
@@ -200,17 +200,17 @@ body {
 @keyframes pulse-green {
     0% {
         transform: scale(1);
-        opacity: 0.45;
+        opacity: 0.6;
     }
 
     50% {
         transform: scale(1.1);
-        opacity: 0.65;
+        opacity: 0.8;
     }
 
     100% {
         transform: scale(1);
-        opacity: 0.45;
+        opacity: 0.6;
     }
 }
 
