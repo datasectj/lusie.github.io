@@ -116,7 +116,7 @@ body {
     display: block;
     filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.6));
     transition: all 0.5s ease-out;
-    transform: translateY(5%);
+    transform: translateY(-5%);
 }
 
 /* blob position */
