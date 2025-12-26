@@ -1,0 +1,271 @@
+/* Global Reset */
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* Locked viewport */
+    background-color: #0d0d0d;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    /* On mobile, use padding to space from edges */
+    padding: 0 5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* Allows stacking on mobile */
+    align-items: center;
+    justify-content: center;
+    /* Center content vertically/horizontally */
+    position: relative;
+    box-sizing: border-box;
+    transition: all 0.5s ease-out;
+}
+
+/* Left Content */
+.content-left {
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    order: 1;
+    /* Mobile: Top half - Reduced height to pull content up */
+    width: 100%;
+    flex-basis: 100%;
+    height: 45%;
+    /* Increased from 40% to match bottom reduction */
+    align-items: center;
+    align-items: center;
+    justify-content: center;
+    /* Center in top section instead of bottom */
+    padding-bottom: 0;
+    text-align: center;
+    transition: all 0.5s ease-out;
+}
+
+.logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 8vh;
+    /* Further increased spacing */
+    transition: all 0.5s ease;
+}
+
+.main-logo {
+    /* Mobile Scaling */
+    width: auto;
+    /* Allow width to shrink if height is capped */
+    height: auto;
+    max-width: 65vw;
+    /* Increased from 50vw to match screenshot */
+    max-height: 15vh;
+    /* Increased from 12vh */
+    transition: all 0.5s ease;
+}
+
+/* ... existing button styles ... */
+
+/* Center White Glow - Spotlight Effect */
+.center-white-glow {
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vw;
+    /* Increased spread */
+    height: 40vh;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, 0) 70%);
+    /* Increased opacity */
+    filter: blur(50px);
+    z-index: 1;
+    /* Behind content (z-index 2) */
+    pointer-events: none;
+}
+
+.cta-button {
+    background-color: #F2F2F2;
+    /* Softer off-white */
+    color: #0d0d0d;
+    font-family: 'Inter', sans-serif;
+    /* Switched to Inter for cleaner look */
+    font-size: clamp(16px, 4vw, 20px);
+    font-weight: 500;
+    /* Reduced from 600 to 500 per 'too dark' feedback */
+    text-decoration: none;
+    padding: clamp(10px, 1.5vh, 16px) clamp(24px, 6vw, 48px);
+    /* slightly smaller padding */
+    border-radius: 20px;
+    /* even less round, more pill/rect hybrid */
+    white-space: nowrap;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    will-change: transform;
+    /* Prevent text jitter/teleporting */
+    line-height: 1.2;
+    /* Stabilize vertical alignment */
+    /* Add inner glow (inset) and reduce outer glow opacity */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2), inset 0 0 15px rgba(255, 255, 255, 0.5);
+    z-index: 10;
+    /* Prevent stretching */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    max-width: 80%;
+}
+
+/* ... existing hover styles ... */
+
+/* Image Container */
+.hero-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 1;
+    order: 2;
+    /* Mobile: Bottom half */
+    width: 100%;
+    flex-basis: 100%;
+    height: 55%;
+    /* Reduced slightly to give text more room */
+    overflow: visible;
+    transition: all 0.5s ease-out;
+    padding-bottom: 0;
+}
+
+.hero-phones {
+    height: 110%;
+    /* Reduced from 125% to manageable size */
+    width: auto;
+    max-width: none;
+    display: block;
+    filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.6));
+    transition: all 0.5s ease-out;
+    transform: translateY(5%);
+    /* Push down slightly to clear button */
+}
+
+/* Green Blob - Adjusted Position/Size */
+.green-blob-bottom-left {
+    position: fixed;
+    bottom: -20vh;
+    left: -20vh;
+    width: 60vmin;
+    height: 60vmin;
+    background: radial-gradient(circle, rgba(93, 226, 108, 0.45) 0%, rgba(0, 0, 0, 0) 70%);
+    /* Significantly increased visibility */
+    filter: blur(60px);
+    z-index: 0;
+    /* Behind content but in front of background color */
+    pointer-events: none;
+    transition: all 1s ease;
+}
+
+/* Desktop Styles (> 1024px) */
+@media (min-width: 1024px) {
+    .container {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 8vw;
+        padding: 0;
+    }
+
+    .content-left {
+        width: auto;
+        flex-basis: auto;
+        height: auto;
+        align-items: flex-start;
+        text-align: left;
+        padding-bottom: 0;
+        margin-left: 0;
+    }
+
+    .logo-wrapper {
+        align-items: flex-start;
+        margin-bottom: 5vh;
+    }
+
+    .main-logo {
+        width: 35vw;
+        max-width: 400px;
+        max-height: none;
+    }
+
+    .cta-button {
+        font-size: 1.5vw;
+        padding: 1.5vh 4vw;
+        border-radius: 3vw;
+    }
+
+    .hero-image-container {
+        width: auto;
+        flex-basis: auto;
+        height: 100%;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .hero-phones {
+        height: auto;
+        width: auto;
+        max-height: 90vh;
+        max-width: 50vw;
+        transform: none;
+    }
+
+    .green-blob-bottom-left {
+        width: 70vmin;
+        height: 70vmin;
+        bottom: -25vmin;
+        left: -25vmin;
+        opacity: 0.8;
+    }
+}
+
+
+/* Animations */
+@keyframes pulse-green {
+    0% {
+        transform: scale(1);
+        opacity: 0.45;
+        /* Increased opacity */
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.65;
+        /* Brighter pulse peak */
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.45;
+        /* Back to baseline */
+    }
+}
+
+.green-blob-bottom-left {
+    animation: pulse-green 4s infinite ease-in-out;
+}
+
+/* Smoother Hover Transition - No Pulse Loop */
+/* Smoother Hover Transition - No Pulse Loop */
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.6);
+    /* Outer + Inner glow intensified */
+    background-color: #ffffff;
+    /* Brighten to pure white on hover for interaction feedback */
+    animation: none;
+    /* Explicitly disable animation to prevent overrides */
+}
+
+```
