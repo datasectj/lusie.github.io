@@ -76,10 +76,10 @@ body {
     background-color: #F2F2F2;
     color: #0d0d0d;
     font-family: 'Inter', sans-serif;
-    font-size: clamp(16px, 4vw, 20px);
+    font-size: clamp(20px, 6vw, 26px);
     font-weight: 500;
     text-decoration: none;
-    padding: clamp(10px, 1.5vh, 16px) clamp(24px, 6vw, 48px);
+    padding: clamp(16px, 2.5vh, 24px) clamp(36px, 10vw, 80px);
     border-radius: 20px;
     white-space: nowrap;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
